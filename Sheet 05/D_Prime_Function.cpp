@@ -2,8 +2,8 @@
  * Bismillahir Rahmanir Raheem
  *
  * * * * Coder   : abubakaristiak
- * * * * Created : 2025-03-02 || 22:27:52
- * * * * File    : C_Wonderful_Number.cpp
+ * * * * Created : 2025-03-02 || 23:26:24
+ * * * * File    : D_Prime_Function.cpp
 */
 
 
@@ -25,41 +25,30 @@ using namespace std;
 
 template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-bool isOdd(int n){
-    return n%2==1;
-}
-bool isPalindrome(int n){
-    string res="";
-    while (n>0)
-    {
-        res+=(n%2)+'0';
-        n/=2;
+bool isPrime(int n){
+    if(n==1){
+        return false;
     }
-    int l=0, r=res.size()-1;
-    while(l<r){
-        if(res[l]!=res[r]){
+    for(int i=2; i<=sqrt(n); i++){
+        if(n%i==0){
             return false;
         }
-        l++;
-        r--;
     }
-    
+    return true;
 }
 
 
 void solve()
 {
     int n; cin >> n;
-    if(isOdd(n) && isPalindrome(n)){
-        yes;
-    }else no;
+    isPrime(n)? yes:no;
 }
 
 
 int main()
 {
     fast();
-    int t=1;
+    int t; cin >> t;
     while (t--) {
         solve();
     }
