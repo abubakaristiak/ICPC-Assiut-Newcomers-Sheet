@@ -2,9 +2,10 @@
  * Bismillahir Rahmanir Raheem
  *
  * * * * Coder   : abubakaristiak
- * * * * Created : 2025-03-12 || 23:33:37
+ * * * * Created : 2025-03-13 || 00:41:04
  * * * * File    : M_Divisible.cpp
 */
+
 
 
 #include<bits/stdc++.h>
@@ -28,8 +29,13 @@ template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree
 
 void solve()
 {
-    ll n,x; cin >> n >> x;
-    if(n%x==0){
+    string s; 
+    int x; cin >> s >> x;
+    ll r=0;
+    for(char ch:s){
+        r=(r*10+(ch-'0'))%x;
+    }
+    if(r==0){
         yes;
     }else no;
 }
