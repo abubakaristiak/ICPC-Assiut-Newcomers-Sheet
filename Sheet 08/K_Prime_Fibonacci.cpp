@@ -2,9 +2,10 @@
  * Bismillahir Rahmanir Raheem
  *
  * * * * Coder   : abubakaristiak
- * * * * Created : 2025-04-25 || 09:35:31
- * * * * File    : C_Koko_And_The_Transformation.cpp
+ * * * * Created : 2025-04-25 || 10:28:28
+ * * * * File    : K_Prime_Fibonacci.cpp
 */
+
 
 
 #include<bits/stdc++.h>
@@ -28,28 +29,28 @@ template <typename T> using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree
 
 void solve()
 {
-    ll n,m; cin >> n >> m;
-    vector<ll> a(n), b(m);
+    bool prime[51] = {
+        0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0,
+        0, 1, 0, 1, 0, 0, 0, 1, 0, 0,
+        0, 0, 0, 1, 0, 0, 0, 0, 0,
+        1, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0
+    };
+    ll n; cin >> n;
+    if(n<0 || n>50){
+        return;
+    }
 
-    ll sum_a=0, sum_b=0;
-    for(ll i=0; i<n; i++){
-        cin >> a[i];
-        sum_a+=a[i];
-    }
-    for(ll i=0; i<m; i++){
-        cin >> b[i];
-        sum_b+=b[i];
-    }
-    if(sum_a==sum_b){
-        cyes;
-    }else cno;
+    if(prime[n]){
+        cout << "prime" << endl;
+    }else cout << "not prime" << endl;
 }
 
 
 int main()
 {
     fast();
-    int t=1;
+    int t; cin >> t;
     while (t--) {
         solve();
     }
