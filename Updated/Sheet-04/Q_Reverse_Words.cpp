@@ -4,9 +4,14 @@ int main(){
     string s, word;
     getline(cin,s);
     stringstream ss(s);
+    bool flag=true;
     while(ss>>word){
         reverse(word.begin(), word.end());
-        cout << word << " ";
+        if(!flag){
+            cout << " ";
+        }
+        cout << word;
+        flag=false;
     }
     return 0;
 }
