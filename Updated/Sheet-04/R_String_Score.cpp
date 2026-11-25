@@ -4,8 +4,9 @@ int main(){
     int n; cin >> n;
     string s; cin >> s;
 
-    int score=0, i=0;
-    while(i<s.size()){
+    int score=0;
+    string t="";
+    for(int i=0; i<n; i++){
         if(s[i]=='V'){
             score+=5;
         }
@@ -13,19 +14,16 @@ int main(){
             score+=2;
         }
         else if(s[i]=='X'){
-            if(i+1<s.size()){
-                s.erase(i+1,1);
-            }
+            i++;
         }
         else if(s[i]=='Y'){
-            if(i+1<s.size()){
-                char ch=s[i+1];
-                s.erase(i+1,1);
-                s.push_back(ch);
+            if(i+1<n){
+                t+=s[i+1];
+                i++;
             }
         }
         else if(s[i]=='Z'){
-            if(i+1<s.size()){
+            if(i+1<){
                 if(s[i+1]=='V'){
                 score/=5;
                 s.erase(i+1,1);
