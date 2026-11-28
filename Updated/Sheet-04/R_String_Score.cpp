@@ -27,12 +27,12 @@ int main(){
         else{
             if(i!=s.size()-1){
                 if(s[i+1]=='V'){
-                score/=5;
-                i++;
-            }
-            else if(s[i+1]=='W'){
-                score/=2;
-                i++;
+                    score/=5;
+                    i++;
+                }
+                else if(s[i+1]=='W'){
+                    score/=2;
+                    i++;
                 }
             }
         }
